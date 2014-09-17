@@ -49,7 +49,7 @@ console.log('======================');
 		},
 		eat: function() {
 			console.log(this.name + ' is eating')
-		},
+		}
 	}
 	
 	//call object with argument and methods
