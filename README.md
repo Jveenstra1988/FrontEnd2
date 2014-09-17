@@ -17,8 +17,12 @@ Best practices used in code
 * Constants with all captials
 * camelCase the rest
 * Place external scripts at the bottom of the page
+* Use data-bind attribute to make hooks between html5 and JavaScript
+* Use classes for css
 
 ## CSS
+* Make right use of classes and id's
+* Use pseudoclasses
 
 ## HTML
-
+* use semantic html5
