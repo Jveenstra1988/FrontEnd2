@@ -83,21 +83,24 @@ var favMovApp = favMovApp || {};
 							for (i=0; i < snow.data.weather[0].hourly.length; i++){
 								var snowy = snow.data.weather[0].hourly[i].top[0];
 								var snowIcon = snow.data.weather[0].hourly[i].top[0].weatherIconUrl[0].value;
+								console.log(snowIcon)
+								var tds = document.getElementsByTagName('td');
 								
-								var weatherIcon = document.getElementsByClassName('icon');
 								var windspeedIcon = document.getElementsByClassName('windspeed');
 								var winddirIcon = document.getElementsByClassName('winddir');
 								
-								images += '<img src="' + snowIcon + '" style="width: 30px; float: right" />';
+								images = '<img src="' + snowIcon + '" style="width: 30px; float: right" />';
 								
-								for(i in weatherIcon){
+								var weatherIcon = document.getElementsByClassName('icon');
+								for(a=0; a < weatherIcon.length; a++){
 									weatherIcon[i].innerHTML = images;
 								}
-								for(i in winddirIcon){
+								
+								for(b in winddirIcon){
 									var winddir16 = snowy.winddir16Point;
 									winddirIcon[i].innerHTML = '<img src="images/' + winddir16 + '.jpg" style="width: 30px; float: right" />';
 								}
-								for(i in windspeedIcon){
+								for(c in windspeedIcon){
 									var windspeed = snowy.windspeedKmph;
 									console.log(windspeed)
 									if (windspeed >= 1) {
