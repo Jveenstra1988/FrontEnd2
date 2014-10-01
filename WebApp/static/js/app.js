@@ -75,20 +75,41 @@ var favMovApp = favMovApp || {};
 					req.onreadystatechange = function() {
 						if (req.readyState == 4 && (req.status == 200 || req.status == 201)) {
 							var snow = JSON.parse(req.responseText);
-							
+							console.log(snow.data)
 							Transparency.render(document.getElementById('renderSnow'), snow.data);
 							
 							var images = '';
+							var winddir16 ='';
 							for (i=0; i < snow.data.weather[0].hourly.length; i++){
-								
+								var snowy = snow.data.weather[0].hourly[i].top[0];
 								var snowIcon = snow.data.weather[0].hourly[i].top[0].weatherIconUrl[0].value;
-								images += '<img src="' + snowIcon + '" />';
-								var tds = document.getElementsByClassName('icon');
-								for (i in tds ){
-									innerHtml = images;
-								}
 								
-								console.log(snowIcon)
+								var weatherIcon = document.getElementsByClassName('icon');
+								var windspeedIcon = document.getElementsByClassName('windspeed');
+								var winddirIcon = document.getElementsByClassName('winddir');
+								
+								images += '<img src="' + snowIcon + '" style="width: 30px; float: right" />';
+								
+								for(i in weatherIcon){
+									weatherIcon[i].innerHTML = images;
+								}
+								for(i in winddirIcon){
+									var winddir16 = snowy.winddir16Point;
+									winddirIcon[i].innerHTML = '<img src="images/' + winddir16 + '.jpg" style="width: 30px; float: right" />';
+								}
+								for(i in windspeedIcon){
+									var windspeed = snowy.windspeedKmph;
+									console.log(windspeed)
+									if (windspeed >= 1) {
+										windspeedIcon.innerHTML = '<img src="images/windspeed1.jpg" style="width: 30px; float: right" />';
+									}
+									if (windspeed >= 7) {
+										windspeedIcon[i].innerHTML = '<img src="images/windspeed7.jpg" style="width: 30px; float: right" />';
+									}
+									if (windspeed >= 12) {
+										windspeedIcon[i].innerHTML = '<img src="images/windspeed12.jpg" style="width: 30px; float: right" />';
+									}
+								}
 							}
 						}
 					}
