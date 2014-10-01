@@ -38,13 +38,6 @@ var favMovApp = favMovApp || {};
 					
 					// change url to /#movies and render content
 					favMovApp.sections.toggle('movies');
-				},
-				'snow': function() {
-					document.querySelector('a').classList.remove('active');
-					document.querySelector('.snow').classList.add('active');
-					
-					// change url to /#movies and render content
-					favMovApp.sections.toggle('snow');
 				}
 			})
 		}
@@ -56,7 +49,6 @@ var favMovApp = favMovApp || {};
 		init: function(){
 			this.about()
 			this.movies()
-			this.snow()
 		},
 		about: function(){
 			// render with transparency
@@ -64,33 +56,7 @@ var favMovApp = favMovApp || {};
 		},
 		movies: function(){
 			// render with transparency
-			Transparency.render(document.getElementById('renderSnowMovies'), favMovApp.content.snowmovies, directives);
-		},
-		snow: function(){
-			var xhr = {
-				trigger: function(){
-					var req = new XMLHttpRequest();
-					var url = "http://api.worldweatheronline.com/free/v1/ski.ashx?q=45.318538%2C%206.539578&format=json&includelocation=yes&lang=lang%3DNL&key=1b864d071bccc955a047934b035f3d393bf128f3";
-					
-					req.onreadystatechange = function() {
-						if (req.readyState == 4 && (req.status == 200 || req.status == 201)) {
-							var snow = JSON.parse(req.responseText);
-							
-							Transparency.render(document.getElementById('renderSnow'), snow.data);
-							
-							for (i=0; i < snow.data.weather[0].hourly.length; i++){
-								var snowData = snow.data.weather[0].hourly[i].top[0].weatherIconUrl[0].value;
-								var tds = document.getElementsByTagName('td');
-								
-								console.log(snowData)
-							}
-						}
-					}
-					req.open("GET", url, true);
-					req.send();
-				}
-			}
-			xhr.trigger()
+			Transparency.render(document.getElementById('renderMovies'), favMovApp.content.movies, directives);
 		},
 		// toggle active class on sections
 		toggle: function(section){

@@ -48,41 +48,14 @@ var favMovApp = favMovApp || {};
 			description: "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level.",
 			cover:'the-dark-knight.jpg'
 			}
-		],
-		snowmovies: [
-			//{
-			//title : "D-HY",
-			//releaseDate: "2014",
-			//iframe: '//player.vimeo.com/video/83186991'
-			//},
-			//{
-			//title : "Swiss Artsy Knife",
-			//releaseDate: "2013",
-			//iframe: '//player.vimeo.com/video/81819238'
-			//},
-			//{
-			//title : "LAAX 'The Movie'",
-			//releaseDate: "2013",
-			//iframe: "//www.youtube.com/embed/bahOIoHZs0I"
-			//},
-			//{
-			//title : "Yes. Missions... The Debrief",
-			//releaseDate: "2013",
-			//iframe: '//player.vimeo.com/video/73787559'
-			//}
 		]
 	}
 	
 	// directive used to fill img tag wit cover content
 	directives = {
-		//image: {
-		//	src: function(params) {
-		//		return "images/" + this.cover;
-		//	}
-		//},
-		iframe: {
+		image: {
 			src: function(params) {
-				return this.iframe;
+				return "images/" + this.cover;
 			}
 		}
 	}
