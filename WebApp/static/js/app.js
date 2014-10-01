@@ -78,11 +78,17 @@ var favMovApp = favMovApp || {};
 							
 							Transparency.render(document.getElementById('renderSnow'), snow.data);
 							
+							var images = '';
 							for (i=0; i < snow.data.weather[0].hourly.length; i++){
-								var snowData = snow.data.weather[0].hourly[i].top[0].weatherIconUrl[0].value;
-								var tds = document.getElementsByTagName('td');
 								
-								console.log(snowData)
+								var snowIcon = snow.data.weather[0].hourly[i].top[0].weatherIconUrl[0].value;
+								images += '<img src="' + snowIcon + '" />';
+								var tds = document.getElementsByClassName('icon');
+								for (i in tds ){
+									innerHtml = images;
+								}
+								
+								console.log(snowIcon)
 							}
 						}
 					}
