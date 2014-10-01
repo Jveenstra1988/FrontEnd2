@@ -73,7 +73,7 @@
 						<article data-bind="weather">
 							<time data-bind="date"></time>
 							<h2>Total snowfall: <em data-bind="totalSnowfall_cm"> <i> cm</i></em> | Chance of snowfall: <em data-bind="chanceofsnow"><span>%</span></em></h2>
-							
+							<p data-bind="top"></p>
 							<table>
 								<thead>
 									<tr>
@@ -154,6 +154,7 @@
 			</nav>
 		</header>
 		<script src="static/js/vendor/transparancy.min.js"></script>
+		<script src="static/js/vendor/underscore.js"></script>
 		<script src="static/js/vendor/routie.js"></script>
 		<script src="static/js/content.js"></script>
         <script src="static/js/app.js"></script>
