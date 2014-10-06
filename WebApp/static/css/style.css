@@ -38,6 +38,7 @@ header nav {
 
 header nav ul {
 	max-width: 1024px;
+	width: 100%;
 	margin: 0 auto;
 	display: block;
 	padding: 20px;
@@ -84,9 +85,9 @@ section > div {
 	border-bottom: 2px dashed white; width: 100%;
 }
 
-section#renderSnow > article {
-	background: url(../../images/mountain.jpg) bottom right no-repeat;
-	background-size: 200%;
+body  {
+	background: url(../../images/mountain.jpg) right center no-repeat;
+	background-size: cover;
 }
 
 p span {
@@ -99,6 +100,8 @@ p span {
 /*table styles*/
 table {
     width:100%;
+	border-spacing: 0px;
+	border: none;
 }
 table tr:nth-child(even) {
     background-color: rgba(218,218,218,.5);
@@ -110,6 +113,8 @@ table tr:nth-child(odd) {
 table th	{
     background-color: black;
     color: white;
+	text-align: left;
+	padding: 5px 10px;
 }
 
 table td {

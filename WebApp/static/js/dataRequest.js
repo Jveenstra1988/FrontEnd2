@@ -3,7 +3,6 @@ var localDataRender = function(){
 	
 	console.log('Data object:')
 	console.log(snow)
-	console.log('-===================================-')
 	console.log('LocalData loaded');						
 	
 	Transparency.render(document.getElementById('renderSnow'), localData.data);
@@ -32,7 +31,7 @@ var localDataRender = function(){
 		for(c in windspeedIcon){
 			var windspeed = snowy.windspeedKmph;
 			if (windspeed >= 1) {
-				windspeedIcon.innerHTML = '<img src="images/windspeed1.jpg" style="width: 30px; float: right" />';
+				windspeedIcon[i].innerHTML = '<img src="images/windspeed1.jpg" style="width: 30px; float: right" />';
 			}
 			if (windspeed >= 7) {
 				windspeedIcon[i].innerHTML = '<img src="images/windspeed7.jpg" style="width: 30px; float: right" />';
@@ -86,7 +85,7 @@ var APIDataRender = function() {
 				}
 				for(c in windspeedIcon){
 					var windspeed = snowy.windspeedKmph;
-					if (windspeed >= 1) {
+					if (windspeed >= 0) {
 						windspeedIcon.innerHTML = '<img src="images/windspeed1.jpg" style="width: 30px; float: right" />';
 					}
 					if (windspeed >= 7) {

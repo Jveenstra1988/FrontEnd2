@@ -73,7 +73,12 @@
 						<article data-bind="weather">
 							<time data-bind="date"></time>
 							<h2>Total snowfall: <em data-bind="totalSnowfall_cm"> <i> cm</i></em> | Chance of snowfall: <em data-bind="chanceofsnow"><span>%</span></em></h2>
-							<p data-bind="top"></p>
+							<hr>
+							<div data-bind="top">
+								<h2>Top:</h2>
+								<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
+								<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
+							</div>
 							<table>
 								<thead>
 									<tr>
@@ -94,7 +99,26 @@
 										<td data-bind="windspeedKmph">NA<em class="windspeed"></em></td>
 										<td data-bind="winddir16Point">NA<em class="winddir"></em></td>
 									</tr>
-									<!--<tr data-bind="mid">
+								</tbody>
+							</table>
+							<hr>
+							<div data-bind="mid">
+								<p>In the middle:</p>
+								<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
+								<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
+							</div>
+							<table>
+								<thead>
+									<tr>
+										<th>Time</th>
+										<th>Temp.</th>
+										<th>weather type</th>
+										<th>Windspeed(kmph)</th>
+										<th>Wind direction</th>
+									</tr>
+								</thead>
+								<tbody data-bind="hourly">
+									<tr data-bind="mid">
 										<td data-bind="time">NA</td>
 										<td data-bind="tempC">NA</td>
 										<td data-bind="weatherDesc">
@@ -103,6 +127,25 @@
 										<td data-bind="windspeedKmph">NA<em class="windspeed"></em></td>
 										<td data-bind="winddir16Point">NA<em class="winddir"></em></td>
 									</tr>
+								</tbody>
+							</table>
+							<hr>
+							<div data-bind="bottom">
+									<p>At the bottom:</p>
+									<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
+									<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
+								</div>
+							<table>
+								<thead>
+									<tr>
+										<th>Time</th>
+										<th>Temp.</th>
+										<th>weather type</th>
+										<th>Windspeed(kmph)</th>
+										<th>Wind direction</th>
+									</tr>
+								</thead>
+								<tbody data-bind="hourly">
 									<tr data-bind="bottom">
 										<td data-bind="time">NA</td>
 										<td data-bind="tempC">NA</td>
@@ -111,31 +154,18 @@
 										</td>
 										<td data-bind="windspeedKmph">NA<em class="windspeed"></em></td>
 										<td data-bind="winddir16Point">NA<em class="winddir"></em></td>
-									</tr>-->
+									</tr>
 								</tbody>
-								</section>
 							</table>
-							<br>
+							<!--<br>-->
 							
-							<section style="display: block">
-								<div data-bind="top">
-									<p>At the top:</p>
-									<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
-									<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
-								</div>
+							<!--<section style="display: block">
+								
 								<br>
-								<div data-bind="mid">
-									<p>In the middle:</p>
-									<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
-									<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
-								</div>
+								
 								<br>
-								<div data-bind="bottom">
-									<p>At the bottom:</p>
-									<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
-									<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
-								</div>
-							</section>
+								
+							</section>-->
 						</article>
 						
 					</article>
@@ -156,8 +186,8 @@
 		<script src="static/js/vendor/transparancy.min.js"></script>
 		<script src="static/js/vendor/underscore.js"></script>
 		<script src="static/js/vendor/routie.js"></script>
-		<script src="static/js/content.js"></script>
 		<script src="static/js/dataRequest.js"></script>
+		<script src="static/js/content.js"></script>
         <script src="static/js/app.js"></script>
     </body>
 </html>
