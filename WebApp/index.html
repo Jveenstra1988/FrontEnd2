@@ -78,6 +78,7 @@
 								<h2>Top:</h2>
 								<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
 								<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
+								<a href="#snow/top">Details</a>
 							</div>
 							<table>
 								<thead>
@@ -85,7 +86,7 @@
 										<th>Time</th>
 										<th>Temp.</th>
 										<th>weather type</th>
-										<th>Windspeed(kmph)</th>
+										<th>Windspeed</th>
 										<th>Wind direction</th>
 									</tr>
 								</thead>
@@ -96,7 +97,7 @@
 										<td data-bind="weatherDesc">
 											<p data-bind="value">NA<em class="icon"></em></p>
 										</td>
-										<td data-bind="windspeedKmph">NA<em class="windspeed"></em></td>
+										<td data-bind="windspeedKmph">NA<em class="windspeed"></em>KM/U</td>
 										<td data-bind="winddir16Point">NA<em class="winddir"></em></td>
 									</tr>
 								</tbody>
@@ -113,7 +114,7 @@
 										<th>Time</th>
 										<th>Temp.</th>
 										<th>weather type</th>
-										<th>Windspeed(kmph)</th>
+										<th>Windspeed</th>
 										<th>Wind direction</th>
 									</tr>
 								</thead>
@@ -141,7 +142,7 @@
 										<th>Time</th>
 										<th>Temp.</th>
 										<th>weather type</th>
-										<th>Windspeed(kmph)</th>
+										<th>Windspeed</th>
 										<th>Wind direction</th>
 									</tr>
 								</thead>
@@ -185,6 +186,7 @@
 		</header>
 		<script src="static/js/vendor/transparancy.min.js"></script>
 		<script src="static/js/vendor/underscore.js"></script>
+		<script src="static/js/vendor/jsonselect.js"></script>
 		<script src="static/js/vendor/routie.js"></script>
 		<script src="static/js/dataRequest.js"></script>
 		<script src="static/js/content.js"></script>

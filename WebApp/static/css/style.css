@@ -5,6 +5,14 @@ body {
 
 main {
 	margin-top: 4em;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: column wrap /* works with row or column */;
+	flex-flow: column wrap;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 
 h1 {
@@ -31,7 +39,7 @@ h1 {
 header nav {
 	position: absolute;
 	top: 0;
-	display: block;
+	display: flex;
 	background: #019396;
 	width: 100%;
 }
@@ -68,11 +76,10 @@ section{
 	display: none;
 	max-width: 1024px;
 	padding: 2em;
-	margin: 0 auto;
 }
  
 section.active, section > section {
-	display: block;
+	display: flex;
 }
 
 section article {
@@ -82,7 +89,8 @@ section article {
 }
 
 section > div {
-	border-bottom: 2px dashed white; width: 100%;
+	border-bottom: 2px dashed white;
+	/*width: 100%;*/
 }
 
 body  {
@@ -102,6 +110,7 @@ table {
     width:100%;
 	border-spacing: 0px;
 	border: none;
+	
 }
 table tr:nth-child(even) {
     background-color: rgba(218,218,218,.5);
@@ -120,3 +129,4 @@ table th	{
 table td {
 	padding: 0px 10px;
 }
+

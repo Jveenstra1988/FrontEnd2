@@ -46,11 +46,10 @@ var favMovApp = favMovApp || {};
 					// change url to /#movies and render content
 					favMovApp.sections.toggle('snow');
 				},
-				'snow/:id': function(){
-					//name == 'bob';
-					//var id = document.getElementById(id);
-					favMovApp.sections.toggle('top');
+				'snow/:id': function(id){
 					console.log('BLAAA')
+					//console.log(id);
+					//favMovApp.renderData( id )
 				}
 			})
 		}
@@ -109,21 +108,21 @@ var favMovApp = favMovApp || {};
 						if(window.localStorage) {
 							console.log('has local storage')
 							//if local Stored Data is available and is not older than 1 min
-							if( (new Date().getTime() - JSON.parse(localStorage['localData']).timestamp < 60000 ) ) {
+							if( (new Date().getTime() - JSON.parse(localStorage['localData']).timestamp < 6000 ) ) {
 								console.log('data is same as local storage')
 								//Display local data
-								localDataRender();
+								favMovApp.localDataRequest();
 							}else {
 								console.log('data is depricated, load API data')
-								APIDataRender();
+								favMovApp.APIDataRequest();
 							}
 						}else {
 							console.log('has no local storage')
-							APIDataRender();
+							favMovApp.APIDataRequest();
 						}
 					}else{
 						console.log('first time, load APIData')
-						APIDataRender();
+						favMovApp.APIDataRequest();
 						createCookie('firstTime','no',0);
 					}
 				}
