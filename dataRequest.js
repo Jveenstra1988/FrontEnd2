@@ -71,73 +71,16 @@ var favMovApp = favMovApp || {};
 				console.log('LocalData saved');
 				
 				//renderData( snow, id );
-			
-			//switch(filter) {							// Checks what the filter is.
-			//	case 'all':
-			//		app.sections.toggle('movie-page');	// Resets all movies.
-			//		break;
-			//	case 'horror':
-			//	case 'crime':
-			//	case 'drama':
-			//	case 'thriller':
-			//	case 'action':
-			//	case 'adventure':	
-			//		obj = _.filter(obj, function(movie) { 							// Filters the obj..
-			//			filter = filter.charAt(0).toUpperCase() + filter.slice(1);	// .. with the genre behind the hash 'movie'..
-			//				return (_.contains(movie.genres, filter) === true); 		// .. and shows only movies with matching genre.
-			//		});
-			//		break;
-			//	case 'asc':
-			//		obj = _.sortBy(obj, function(movie) { 	
-			//			return movie.reviews;				// Sort the movies based on their rating, ascending.
-			//		});
-			//		break;
-			//	case 'desc':
-			//		obj = _.sortBy(obj, function(movie) {
-			//			return movie.reviews * -1;			// Sort the movies based on their rating, descending.
-			//		});
-			//		break;	
-			//	case 'date-asc':
-			//		obj = _.sortBy(obj, function(movie) {
-			//			return Date.parse(movie.release_date); 			// Sort the movies based on their release date, ascending.
-			//		});
-			//		break;
-			//	case 'date-desc':
-			//		obj = _.sortBy(obj, function(movie) {
-			//			return Date.parse(movie.release_date) * -1;		// Sort the movies based on their release date, descending.
-			//		});
-			//		break;
-			//	default:
-			//		// No valid filter
-			//		break;
-			//	}
 				
 				Transparency.render(document.getElementById('renderSnow'), snow.data);
+				Transparency.render(document.getElementById('renderDetail'), snow.data);
 			
 				var images = '';
 				var winddir16 ='';
 				
 				for (i=0; i < snow.data.weather[0].hourly.length; i++){
-					//console.log(snow.data.weather[0].hourly[i].top[0].tempC);
-					//var combinedTempC = _.reduce(snow.data.weather[0].hourly[i].top[0].tempC, function(memo, num){
-					//	return memo + num;
-					//}, 0);
-					
-					var totalTempC = _.map(snow.data.weather[0].hourly[i].top[0].tempC, function(num) {												// Use underscore.js to map each value in a list..
-						var combinedTempC = _.reduce(snow.data.weather[0].hourly[i].top[0].tempC, function(memo, num) {	// .. then combine those values..
-							return memo + num; }, 0) / _.size(combinedTempC);		// .. and divide by total reviews to get the average review score.
-					});
-					
-					console.log(totalTempC);
-					
-					
-							
-					//_.map([1, 2, 3], function(num){ return num * 3; });
-
-					
 					var snowy = snow.data.weather[0].hourly[i].top[0];
 				
-					//var snowIcon = JSONSelect.match('.weatherIconUrl' , snow);
 					var snowIcon = snow.data.weather[0].hourly[i].top[0].weatherIconUrl[0].value;
 					//console.log(snowIcon);
 					

@@ -9,10 +9,11 @@ Best practices used in code
 
 ## Algemeen
 * Comment your code
+* Put everything in constant language - prefferred English
 
 ## JavaScript
-* Don't use global variables/objects
-* Use short clear (meaningful) names
+* Don't use global variables/objects (accept namespace)
+* Use short, clear, meaningful names
 * Constructor function start with capital
 * Constants with all captials
 * camelCase the rest

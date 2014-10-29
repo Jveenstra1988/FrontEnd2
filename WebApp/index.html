@@ -1,195 +1,143 @@
 <!doctype html>
 <html>
     <head>
+        <!-- META -->
         <meta charset="utf-8">
-        <meta name="description" content="Web App V1, basic JavaScript Skeleton">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>My Favorite Movies</title>
-        <link rel="stylesheet" href="static/css/style.css">
-        <link rel="author" href="humans.txt">
-    </head>
-	
-    <body>
-		<div id="new"></div>
-		<main id="content">
-			<section data-route="" id="welkom">
-				<h1>Welkom op de filmsite</h1>
-			</section>
-			
-			<section data-route="about" id="about">
-				<section>
-					<header>
-						<h1 data-bind="title"></h1>
-						<article data-bind="description">
-							<p data-bind="paragraph"></p>
-						</article>
-					</header>
-				</section>
-			</section>
+        <meta name="description" content="Favourite Movie App">
+		<meta name="author" content="Jesse Veenstra"
+        <!--<meta name="viewport" content="width=content-width, initial-scale=1">-->
 
-			<section data-route="movies" id="movies">
-				<h1>Favorite movies</h1>
-				<!--<section id=renderMovies>
-					<article>
-						<header>
-							<h1 data-bind="title"></h1>
-							<em>Release date: <time data-bind="releaseDate"></time></em>
-						</header>
-	
-						<figure>
-							<img data-bind="image" src="" alt="">
-						</figure>
-	
-						<p data-bind="description"></p>
-					</article>
-				</section>-->
-				<section id=renderSnowMovies>
-					<article>
-						<header>
-							<h2 data-bind="title"></h2>
-							<em>Release date: <time data-bind="releaseDate"></time></em>
-						</header>
-						<br>
-						<iframe data-bind="iframe" src="" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-							
-						</iframe>
-	
-						<p data-bind="description"></p>
-					</article>
-				</section>			
-			</section>
-			
-			<section data-route="snow" id="snow">
-				<section id=renderSnow>
-					<article data-bind="nearest_area">
-						<div data-bind="areaName">
-							<h1 data-bind="value">
-								<em data-bind="country"> -
-									<i data-bind="value"></i>
-								</em>
-							</h1>
-						</div>
-						
-						<article data-bind="weather">
-							<time data-bind="date"></time>
-							<h2>Total snowfall: <em data-bind="totalSnowfall_cm"> <i> cm</i></em> | Chance of snowfall: <em data-bind="chanceofsnow"><span>%</span></em></h2>
-							<hr>
-							<div data-bind="top">
-								<h2>Top:</h2>
-								<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
-								<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
-								<a href="#snow/top">Details</a>
-							</div>
-							<table>
-								<thead>
-									<tr>
-										<th>Time</th>
-										<th>Temp.</th>
-										<th>weather type</th>
-										<th>Windspeed</th>
-										<th>Wind direction</th>
-									</tr>
-								</thead>
-								<tbody data-bind="hourly">
-									<tr data-bind="top">
-										<td data-bind="time">NA</td>
-										<td data-bind="tempC">NA</td>
-										<td data-bind="weatherDesc">
-											<p data-bind="value">NA<em class="icon"></em></p>
-										</td>
-										<td data-bind="windspeedKmph">NA<em class="windspeed"></em>KM/U</td>
-										<td data-bind="winddir16Point">NA<em class="winddir"></em></td>
-									</tr>
-								</tbody>
-							</table>
-							<hr>
-							<div data-bind="mid">
-								<p>In the middle:</p>
-								<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
-								<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
-							</div>
-							<table>
-								<thead>
-									<tr>
-										<th>Time</th>
-										<th>Temp.</th>
-										<th>weather type</th>
-										<th>Windspeed</th>
-										<th>Wind direction</th>
-									</tr>
-								</thead>
-								<tbody data-bind="hourly">
-									<tr data-bind="mid">
-										<td data-bind="time">NA</td>
-										<td data-bind="tempC">NA</td>
-										<td data-bind="weatherDesc">
-											<p data-bind="value">NA<em class="icon"></em></p>
-										</td>
-										<td data-bind="windspeedKmph">NA<em class="windspeed"></em></td>
-										<td data-bind="winddir16Point">NA<em class="winddir"></em></td>
-									</tr>
-								</tbody>
-							</table>
-							<hr>
-							<div data-bind="bottom">
-									<p>At the bottom:</p>
-									<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
-									<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
-								</div>
-							<table>
-								<thead>
-									<tr>
-										<th>Time</th>
-										<th>Temp.</th>
-										<th>weather type</th>
-										<th>Windspeed</th>
-										<th>Wind direction</th>
-									</tr>
-								</thead>
-								<tbody data-bind="hourly">
-									<tr data-bind="bottom">
-										<td data-bind="time">NA</td>
-										<td data-bind="tempC">NA</td>
-										<td data-bind="weatherDesc">
-											<p data-bind="value">NA<em class="icon"></em></p>
-										</td>
-										<td data-bind="windspeedKmph">NA<em class="windspeed"></em></td>
-										<td data-bind="winddir16Point">NA<em class="winddir"></em></td>
-									</tr>
-								</tbody>
-							</table>
-							<!--<br>-->
-							
-							<!--<section style="display: block">
-								
-								<br>
-								
-								<br>
-								
-							</section>-->
-						</article>
-						
-					</article>
-				</section>				
-			</section>
-		</main>
-		
+        <!-- CSS -->
+        <link rel="stylesheet" href="static/css/style.css">
+        
+        <title>Favourite Movie App</title>
+
+    </head>
+    <body>
+
 		<header>
 			<nav>
 				<ul>
-					<li><a href="" class="home">Home</a></li>
-					<li><a href="#about" class="about">About</a></li>
-					<li><a href="#movies" class="movies">Movies</a></li>
-					<li><a href="#snow" class="snow">Snowreport</a></li>
+					<li><a id="menuButton" class="left">&#9776;</a></li>
+					<li><a id="filterButton" class="right marginLeft">&becaus;</a></li>
+					<li><a href="#movies" class="right" onclick="localStorage.clear(), location.reload();"> &orarr; Refresh </a></li>
+					<li><em id="dataFeedback" class="rigth"></em><div id="onlineStatus" class=""></div></li>
 				</ul>
 			</nav>
 		</header>
-		<script src="static/js/vendor/transparancy.min.js"></script>
-		<script src="static/js/vendor/underscore.js"></script>
-		<script src="static/js/vendor/jsonselect.js"></script>
+
+		<main id="content">
+			<div id="menu">
+				<nav>
+					<ul>
+						<li><a href="#about">About</a></li>
+						<li><a href="#movies">Movies</a></li>
+					</ul>
+				</nav>
+			</div>
+			
+			<div id="filter">
+				<ul class="filter">
+					<ul class="genre">
+						<h2>Filter by genre</h2>
+						<li><a href="#movies/genre/all">All</a></li>
+						<li><a href="#movies/genre/horror">Horror</a></li>
+						<li><a href="#movies/genre/crime">Crime</a></li>
+						<li><a href="#movies/genre/drama">Drama</a></li>
+						<li><a href="#movies/genre/thriller">Thriller</a></li>
+						<li><a href="#movies/genre/action">Action</a></li>
+						<li><a href="#movies/genre/adventure">Adventure</a></li>
+					</ul>
+					<ul class="date">
+						<h2>Sort by date</h2>
+						<li><a href="#movies/date/date-asc">Ascending</a></li>
+						<li><a href="#movies/date/date-desc">Descending</a></li>
+					</ul>
+					<ul class="rating">
+						<h2>Sort by rating</h2>
+						<li><a href="#movies/rating/asc">Ascending</a></li>
+						<li><a href="#movies/rating/desc">Descending</a></li>
+					</ul>
+				</ul>
+			</div>
+			
+			<section id="about-page">
+				<header>
+					<h1 data-bind="title"></h1>
+				</header>
+				<p data-bind="description"></p>
+			</section>
+
+			<section id="movie-page">
+				<header class="info">
+					<h1>My favourite movies</h1>
+				</header>
+					
+				<article id="movies" data-bind="movies">
+					<section>
+						<figure>
+							<a data-bind="link" href="">
+								<img src="" alt="" data-bind="cover">
+							</a>
+						</figure>
+						
+						<header>
+							<a data-bind="link" href="">
+								<h2 data-bind="title"></h2>
+							</a>
+							<p>Release date: <time data-bind="release_date"></time></p>
+							<p>Rating: <span data-bind="reviews"></span></p>
+						</header>
+
+						<p data-bind="simple_plot"></p>
+						<a data-bind="link" href="">Go to detail page</a>
+					</section>
+				</article>
+			</section>
+
+			<section id="detail-page">
+				<header class="info">
+					<h1 style="background: yellow;">Detail Page</h1>
+				</header>
+				<article id="detail" data-bind="detail">
+					<section>
+						<figure>
+							<img src="" alt="" data-bind="cover">
+						</figure>
+						<header>
+							<h1 data-bind="title"></h1>
+							<p>Release date: <time data-bind="release_date"></time></p>
+							<p>Rating: <span data-bind="reviews"></span></p>
+							<p>Genre: <span data-bind="genres"></span></p>
+						</header>
+						<p data-bind="plot"></p>
+					</section>
+
+					<section>
+						<h2>Actors:</h2>
+						<div class="actors">
+							<span data-bind="character"></span> -								
+							<span data-bind="actor_name"></span><br>
+						</div>
+						<h2>Director:</h2> 
+						<div data-bind="directors">
+							<span data-bind="name"></span>
+						</div>
+					</section>
+
+					<a href="#movies">Back to overview</a>
+
+				</article>
+			</section>
+
+		</main>
+
+		<!-- SCRIPTS -->
 		<script src="static/js/vendor/routie.js"></script>
-		<script src="static/js/dataRequest.js"></script>
-		<script src="static/js/content.js"></script>
+        <script src="static/js/vendor/transparency.js"></script>
+        <script src="static/js/vendor/underscore.js"></script>
+        <script src="static/js/vendor/hammer.js"></script>
+        <script src="static/js/content.js"></script>
         <script src="static/js/app.js"></script>
     </body>
 </html>

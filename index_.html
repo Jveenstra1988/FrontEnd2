@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Web App V1, basic JavaScript Skeleton">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Favorite Movies</title>
+        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="author" href="humans.txt">
+    </head>
+	
+    <body>
+		<div id="new"></div>
+		<main id="content">
+			<section data-route="" id="welkom">
+				<h1>Welkom op de filmsite</h1>
+			</section>
+			
+			<section data-route="about" id="about">
+				<section>
+					<header>
+						<h1 data-bind="title"></h1>
+						<article data-bind="description">
+							<p data-bind="paragraph"></p>
+						</article>
+					</header>
+				</section>
+			</section>
+
+			<section data-route="movies" id="movies">
+				<h1>Favorite movies</h1>
+				<!--<section id=renderMovies>
+					<article>
+						<header>
+							<h1 data-bind="title"></h1>
+							<em>Release date: <time data-bind="releaseDate"></time></em>
+						</header>
+	
+						<figure>
+							<img data-bind="image" src="" alt="">
+						</figure>
+	
+						<p data-bind="description"></p>
+					</article>
+				</section>-->
+				<section id=renderSnowMovies>
+					<article>
+						<header>
+							<h2 data-bind="title"></h2>
+							<em>Release date: <time data-bind="releaseDate"></time></em>
+						</header>
+						<br>
+						<iframe data-bind="iframe" src="" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+							
+						</iframe>
+	
+						<p data-bind="description"></p>
+					</article>
+				</section>			
+			</section>
+			
+			<section data-route="snow" id="snow">
+				<section id="renderSnow">
+					<article data-bind="nearest_area">
+						<div data-bind="areaName">
+							<h1 data-bind="value">
+								<em data-bind="country"> -
+									<i data-bind="value"></i>
+								</em>
+							</h1>
+						</div>
+						
+						<article data-bind="weather">
+							<time data-bind="date"></time>
+							<h2>Total snowfall: <em data-bind="totalSnowfall_cm"> <i> cm</i></em> | Chance of snowfall: <em data-bind="chanceofsnow"><span>%</span></em></h2>
+							
+							<div data-bind="top">
+								<h3>Top:</h3>
+								<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
+								<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
+								<a href="#snow/top" class="button">Details</a>
+							</div>
+							
+							<div data-bind="mid">
+								<h3>Midden:</h3>
+								<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
+								<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
+								<a href="#snow/mid" class="button">Details</a>
+							</div>
+							
+							<div data-bind="bottom">
+								<h3>Voet van de berg:</h3>
+								<p>Min <span data-bind="mintempC">NA<em>&deg;</em></span></p>
+								<p>Max <span data-bind="maxtempC">NA<em>&deg;</em></span></p>
+								<a href="#snow/bottom" class="button">Details</a>
+							</div>
+						
+					</article>
+				</section>				
+			</section>
+			<section data-route="detail-page" id="bottom">
+				<section id="renderDetail">
+					<article data-bind="nearest_area">
+						<article data-bind="weather">
+							<!--<table id="top" class="hidden">-->
+							<!--	<h2>Details van de top van de berg, per uur:</h2>-->
+							<!--	<thead>-->
+							<!--		<tr>-->
+							<!--			<th>Time</th>-->
+							<!--			<th>Temp.</th>-->
+							<!--			<th>weather type</th>-->
+							<!--			<th>Windspeed</th>-->
+							<!--			<th>Wind direction</th>-->
+							<!--		</tr>-->
+							<!--	</thead>-->
+							<!--	<tbody data-bind="hourly">-->
+							<!--		<tr data-bind="top">-->
+							<!--			<td data-bind="time">NA</td>-->
+							<!--			<td data-bind="tempC">NA</td>-->
+							<!--			<td data-bind="weatherDesc">-->
+							<!--				<p data-bind="value">NA<em class="icon"></em></p>-->
+							<!--			</td>-->
+							<!--			<td data-bind="windspeedKmph">NA<em class="windspeed"></em>KM/U</td>-->
+							<!--			<td data-bind="winddir16Point">NA<em class="winddir"></em></td>-->
+							<!--		</tr>-->
+							<!--	</tbody>-->
+							<!--</table>-->
+							<!---->
+							<!--<table id="mid" class="hidden">-->
+							<!--	<h2>Details van het midden van de berg, per uur:</h2>-->
+							<!--	<thead>-->
+							<!--		<tr>-->
+							<!--			<th>Time</th>-->
+							<!--			<th>Temp.</th>-->
+							<!--			<th>weather type</th>-->
+							<!--			<th>Windspeed</th>-->
+							<!--			<th>Wind direction</th>-->
+							<!--		</tr>-->
+							<!--	</thead>-->
+							<!--	<tbody data-bind="hourly">-->
+							<!--		<tr data-bind="mid">-->
+							<!--			<td data-bind="time">NA</td>-->
+							<!--			<td data-bind="tempC">NA</td>-->
+							<!--			<td data-bind="weatherDesc">-->
+							<!--				<p data-bind="value">NA<em class="icon"></em></p>-->
+							<!--			</td>-->
+							<!--			<td data-bind="windspeedKmph">NA<em class="windspeed"></em></td>-->
+							<!--			<td data-bind="winddir16Point">NA<em class="winddir"></em></td>-->
+							<!--		</tr>-->
+							<!--	</tbody>-->
+							<!--</table>-->
+							
+							<table id="bottom" class="hidden">
+								<h2>Details van de voet van de berg, per uur:</h2>
+								<thead>
+									<tr>
+										<th>Time</th>
+										<th>Temp.</th>
+										<th>weather type</th>
+										<th>Windspeed</th>
+										<th>Wind direction</th>
+									</tr>
+								</thead>
+								<tbody data-bind="hourly">
+									<tr data-bind="bottom">
+										<td data-bind="time">NA</td>
+										<td data-bind="tempC">NA</td>
+										<td data-bind="weatherDesc">
+											<p data-bind="value">NA<em class="icon"></em></p>
+										</td>
+										<td data-bind="windspeedKmph">NA<em class="windspeed"></em></td>
+										<td data-bind="winddir16Point">NA<em class="winddir"></em></td>
+									</tr>
+								</tbody>
+							</table>
+						</article>
+					</article>
+				</section>
+			</section>
+		</main>
+		
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#" class="home">Home</a></li>
+					<li><a href="#about" class="about">About</a></li>
+					<li><a href="#movies" class="movies">Movies</a></li>
+					<li><a href="#snow" class="snow">Snowreport</a></li>
+					<li><em id="dataFeedback"></em> <a href="#" class="right" onclick="localStorage.clear(), location.reload();">Refresh</a></li>
+				</ul>
+			</nav>
+		</header>
+		<script type="text/javascript" src="static/js/vendor/underscore.js"></script>
+		<script src="static/js/vendor/transparancy.min.js"></script>
+		<script src="static/js/vendor/routie.js"></script>
+		<!--<script src="static/js/dataRequest.js"></script>-->
+		<script src="static/js/content.js"></script>
+        <script src="static/js/app.js"></script>
+    </body>
+</html>
